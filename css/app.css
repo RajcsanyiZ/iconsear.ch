@@ -4,7 +4,13 @@ body {
   font-family: 'Raleway', sans-serif; }
 
 #header h1 {
+  padding-top: 10px;
   font-family: 'Berkshire Swash', cursive; }
+  #header h1 small {
+    font-family: 'Raleway', sans-serif;
+    color: red;
+    font-size: 0.5em;
+    font-style: italic; }
 
 #search-box {
   background-color: #054369;
@@ -156,23 +162,31 @@ h1.category {
   font-size: 16px;
   font-weight: bold; }
 
-#footer_menu {
+#footer-menu {
   background-color: #054369;
-  color: white;
-  height: 46px;
-  text-align: center; }
-  #footer_menu ul.navbar-nav li a:hover {
-    background: none;
-    color: white; }
-  #footer_menu ul.navbar-nav li a.share-text {
-    color: #516F89;
-    hover-color: #516F89; }
+  text-align: center;
+  color: #73bdd0;
+  height: 60px; }
+  #footer-menu ul.footer-nav {
+    list-style: none;
+    font-size: 1.5em;
+    padding: 0;
+    margin: 0; }
+    #footer-menu ul.footer-nav li {
+      display: inline-block;
+      padding: 10px 5px; }
+      #footer-menu ul.footer-nav li a {
+        color: #abe8f7; }
+        #footer-menu ul.footer-nav li a:hover {
+          background: none;
+          color: white; }
 
 #footer {
   background-color: #064d79;
   color: white;
-  height: 150px;
-  text-align: center; }
+  height: 60px;
+  padding: 0;
+  margin: 0; }
 
 .btn-custom {
   margin-top: 40px;
@@ -189,7 +203,10 @@ h1.category {
     border: 2px solid white; }
 
 .copyright {
-  margin-top: 20px; }
+  padding-top: 20px;
+  color: rgba(255, 255, 255, 0.3); }
+  .copyright a {
+    color: rgba(255, 255, 255, 0.3); }
   .copyright :hover {
     color: white; }
 
@@ -213,32 +230,35 @@ h1.category {
   float: right;
   width: 10px; }
 
-.ico-size a {
-  color: lightblue; }
+.ico-size {
+  padding-top: 0;
+  border: 1px solid #abe8f7; }
+  .ico-size a {
+    color: #abe8f7; }
 
 .ico-color-default {
-  padding-top: 8px;
+  padding-top: 0px;
   background-color: #222;
   border: 2px solid #abe8f7; }
-  .ico-color-default span {
+  .ico-color-default i {
     color: #abe8f7; }
 
 .ico-color-light {
-  padding-top: 8px;
+  padding-top: 0px;
   background-color: lightgray;
   border: 2px solid darkgray; }
-  .ico-color-light span {
+  .ico-color-light i {
     color: black; }
 
 .ico-color-dark {
-  padding-top: 8px;
+  padding-top: 0px;
   background-color: white;
   border: 1px solid black; }
-  .ico-color-dark span {
+  .ico-color-dark i {
     color: black; }
 
 .wrap {
-  min-height: calc(100vh - 200px);
+  min-height: calc(100vh - 110px);
   margin-bottom: -2px; }
 
 .symbol {
@@ -250,12 +270,15 @@ h1.category {
   margin: 2px;
   text-align: center;
   margin-top: 6px;
-  margin-bottom: 20px;
+  margin-bottom: 0;
   width: 60px;
   height: 60px;
-  font-size: 40px; }
+  font-size: 40px;
+  cursor: pointer; }
   .symbol i, .symbol span {
-    color: #abe8f7; }
+    font-size: 40px;
+    color: #abe8f7;
+    cursor: pointer; }
 
 .symbol-theme-1 {
   background: #eee; }
@@ -272,12 +295,16 @@ h1.category {
   width: 100px;
   height: 100px;
   font-size: 60px; }
+  .symbol-lg i, .symbol-lg span {
+    font-size: 60px; }
 
 .symbol-sm {
   padding-top: 7px;
   width: 40px;
   height: 40px;
   font-size: 20px; }
+  .symbol-sm i, .symbol-sm span {
+    font-size: 20px; }
 
 .wrap-symbols-theme {
   background: #eee; }

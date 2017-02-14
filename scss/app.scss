@@ -5,7 +5,15 @@ body {
 }
 
 #header h1 {
+  padding-top: 10px;
   font-family: 'Berkshire Swash', cursive;
+
+  small {
+    font-family: 'Raleway', sans-serif;
+    color: red;
+    font-size: 0.5em;
+    font-style: italic;
+  }
 }
 
 #search-box {
@@ -193,20 +201,30 @@ h1.category {
   font-weight: bold;
 }
 
-#footer_menu {
+#footer-menu {
   background-color: #054369;
-  color: white;
-  height: 46px;
   text-align: center;
-  ul.navbar-nav li a:hover {
-    background: none;
-    color: white;
-  }
+  color: #73bdd0;
+  height: 60px;
 
-  ul.navbar-nav li a.share-text {
-    color: #516F89;
-    hover: {
-      color: #516F89;
+  ul.footer-nav {
+    list-style: none;
+    font-size: 1.5em;
+    padding: 0;
+    margin: 0;
+
+    li {
+      display: inline-block;
+      padding: 10px 5px;
+
+      a {
+        color: #abe8f7;
+
+        &:hover {
+          background: none;
+          color: white;
+        }
+      }
     }
   }
 }
@@ -214,8 +232,9 @@ h1.category {
 #footer {
   background-color: #064d79;
   color: white;
-  height: 150px;
-  text-align: center;
+  height: 60px;
+  padding: 0;
+  margin: 0;
 }
 
 .btn-custom {
@@ -235,7 +254,14 @@ h1.category {
 }
 
 .copyright {
-  margin-top: 20px;
+  padding-top: 20px;
+
+  color: rgba(255,255,255,.3);
+
+  a {
+    color: rgba(255,255,255,.3);
+  }
+
   :hover {
     color: white;
   }
@@ -268,39 +294,44 @@ h1.category {
   width: 10px;
 }
 
-.ico-size a {
-  color: lightblue;
+.ico-size  {
+  padding-top:0;
+  border: 1px solid #abe8f7;
+
+  a {
+    color: #abe8f7;
+  }
 }
 
 .ico-color-default {
-  padding-top: 8px;
+  padding-top: 0px;
   background-color: #222;
   border: 2px solid #abe8f7;
-  span {
+  i {
     color: #abe8f7;
   }
 }
 
 .ico-color-light {
-  padding-top: 8px;
+  padding-top: 0px;
   background-color: lightgray;
   border: 2px solid darkgray;
-  span {
+  i {
     color: black;
   }
 }
 
 .ico-color-dark {
-  padding-top: 8px;
+  padding-top: 0px;
   background-color: white;
   border: 1px solid black;
-  span {
+  i {
     color: black;
   }
 }
 
 .wrap {
-  min-height: calc(100vh - 200px);
+  min-height: calc(100vh - 110px);
   margin-bottom: -2px;
 }
 
@@ -313,12 +344,16 @@ h1.category {
   margin: 2px;
   text-align: center;
   margin-top: 6px;
-  margin-bottom: 20px;
+  margin-bottom: 0;
   width: 60px;
   height: 60px;
   font-size: 40px;
+  cursor: pointer;
+
   i, span  {
-   color: #abe8f7;
+    font-size: 40px;
+    color: #abe8f7;
+    cursor: pointer;
   }
 }
 
@@ -341,6 +376,9 @@ h1.category {
   width: 100px;
   height: 100px;
   font-size: 60px;
+  i, span {
+    font-size: 60px;
+  }
 }
 
 .symbol-sm {
@@ -348,6 +386,9 @@ h1.category {
   width: 40px;
   height: 40px;
   font-size: 20px;
+  i, span {
+    font-size: 20px;
+  }
 }
 
 .wrap-symbols-theme {

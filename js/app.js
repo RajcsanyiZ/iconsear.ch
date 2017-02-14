@@ -1,44 +1,20 @@
 $(document).ready(function() {
-
-  // effect on the header
-  var logos = [
-    '&#x2600;',
-    '<i class="fa fa-moon-o"></i>',
-    '<i class="fa fa-users"></i>',
-    '&#x260A;',
-    '<span class="glyphicon glyphicon-trash"></span>'
-  ];
-
-  var idxLogo = 0;
-  var maxLogo = logos.length
-
-  function myLogo() {
-    $("#logo").html(logos[idxLogo]);
-    idxLogo++;
-    if (idxLogo == maxLogo) {
-      idxLogo = 0;
-    }
-  }
-
-  $('[data-toggle="tooltip"]').tooltip()
   $('#goup').click(function(e) {
     e.preventDefault();
     window.scrollTo(0,0);
   });
 
-  setInterval(myLogo, 2000);
-
-  var originVisible=[];
-  filterOrigin();
+  var packVisible=[];
+  filterPack();
 
   // change source of symbols
   $(".filter-switch").click(function(e) {
     $(this).children('i').toggleClass('fa-check-square-o');
     $(this).children('i').toggleClass('fa-square-o');
-    $(this).toggleClass('label-info');
-    $(this).toggleClass('label-danger');
+    $(this).toggleClass('badge-info');
+    $(this).toggleClass('badge-danger');
 
-    filterOrigin();
+    filterPack();
     refreshList();
   });
 
@@ -51,11 +27,12 @@ $(document).ready(function() {
 
   for(var i=0; i < symbols.length; i++) {
     var symbol = symbols[i];
-    var $symbol = $('<div class="symbol origin-'+symbol.origin+'" keyword="'+symbol.keyword+'">'+symbol.code+'</div>');
+    var tooltip = 'data-toggle="tooltip" data-placement="top" title="'+symbol.name+'"';
+    var $symbol = $('<div class="symbol pack-'+symbol.pack+'" keyword="'+symbol.keyword+'" id="'+i+'" '+tooltip+'>'+symbol.code+'</div>');
     $symbols.append($symbol);
   }
 
-  filterOrigin();
+  filterPack();
   refreshList();
 
   // autosize symbols
@@ -63,16 +40,12 @@ $(document).ready(function() {
 
   $('#search').on('input', refreshList);
 
-  // filter origin of the symbols
-  function filterOrigin() {
-    originVisible=[];
+  // filter pack of the symbols
+  function filterPack() {
+    packVisible=[];
 
-    if ($('#filter-font-awesome').hasClass("label-info")) {
-      originVisible.push('.origin-font-awesome');
-    }
-
-    if ($('#filter-glyphicon').hasClass("label-info")) {
-      originVisible.push('.origin-glyphicon');
+    if ($('#filter-font-awesome').hasClass("badge-info")) {
+      packVisible.push('.pack-font-awesome');
     }
   }
 
@@ -84,7 +57,7 @@ $(document).ready(function() {
       if ($(this).attr('keyword').search(keyword) === -1) {
         $icon.hide();
       } else {
-        if ($(this).is(originVisible.join())) {
+        if ($(this).is(packVisible.join())) {
           $icon.show();
           number_of_symbols++;
         } else {
@@ -131,6 +104,37 @@ $(document).ready(function() {
     $('#wrap-symbols').removeClass('wrap-symbols-theme');
   });
 
+  // open showSymbol modal window
+  $('.symbol').click(function(e) {
+    e.preventDefault();
+
+    // load data of symbol
+    var symbol = symbols[$(this).attr('id')]
+
+    // refresh modal from data
+    $('#symbol-html').html(symbol.code);
+
+    $('#symbol-pack-link').attr('href', symbol.packLink);
+    $('#symbol-pack-name').html(symbol.pack);
+
+    $('#symbol-link').attr('href', symbol.link);
+    $('#symbol-name').html(symbol.name);
+
+    $('#symbol-code').text(symbol.code);
+    $('#symbol-unicode').text(symbol.unicode);
+
+    $('#symbol-keyword').text(symbol.keyword);
+
+    // warning message show only brand icons
+    if (inArray(symbol.id, symbols_fontawesome_brand_icons)) {
+      $('#alert-font-awesome').show();
+    } else {
+      $('#alert-font-awesome').hide();
+    }
+
+    $('#infoSymbol').modal();
+  })
+
 
   function inArray(needle, haystack) {
     var length = haystack.length;
@@ -139,4 +143,8 @@ $(document).ready(function() {
     }
     return false;
   }
+
+  $('[data-toggle="tooltip"]').tooltip()
+
+  new Clipboard('.btn');
 });
