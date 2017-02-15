@@ -54,7 +54,7 @@ $(document).ready(function() {
   }
 
   function refreshList() {
-    var keyword = $('#search').val();
+    var keyword = $('#search_field').val();
     var number_of_symbols = 0;
     var filterSocial = $('#filter-social-btn').hasClass('badge-info');
     $('.symbol').each(function(index) {
