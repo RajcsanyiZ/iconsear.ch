@@ -126,31 +126,35 @@ nav {
   background-color: #222;
   height: 50px;
   border-radius: 0px 20px 20px 0px;
-  border: 1px solid #444;
+  border: 1px solid #32829e;
   border-left: none;
   font-size: 18px;
   font-weight: normal;
   margin: 20px 0;
+  box-shadow: 0px 0px 5px rgba(255,255,255,.3);
 }
 
 #search .btn {
+  margin: 20px 0;
   height: 50px;
   background-color: #222;
   border-radius: 20px 0px 00px 20px;
-  border: 1px solid #444;
+  border: 1px solid #32829e;
   border-right: none;
   font-size: 18px;
   font-weight: normal;
+  color: lightblue;
+  box-shadow: 0px 0px 5px rgba(255,255,255,.3);
 }
 
 input[placeholder], [placeholder], *[placeholder] {
-    color: gray !important;
+    color: #abe8f7 !important;
 }
 
-.form-control::-webkit-input-placeholder { color: #575757; font-style: italic; }
-.form-control:-moz-placeholder { color: #575757; font-style: italic; }
-.form-control::-moz-placeholder { color: #575757; font-style: italic; }
-.form-control:-ms-input-placeholder { color: #575757; font-style: italic; }
+.form-control::-webkit-input-placeholder { color: #32829e; font-style: italic; }
+.form-control:-moz-placeholder { color: #32829e; font-style: italic; }
+.form-control::-moz-placeholder { color: #32829e; font-style: italic; }
+.form-control:-ms-input-placeholder { color: #32829e; font-style: italic; }
 
 h1.category {
   font-family: 'Raleway', sans-serif;
@@ -165,8 +169,29 @@ h1.category {
   }
   small {
     font-family: 'Raleway', sans-serif;
+    font-size: .5em;
+    color: red;
   }
 }
+
+h1.symbol-theme-1-h1 {
+  color: black;
+
+  small {
+    color: gray;
+  }
+
+}
+
+h1.symbol-theme-2-h1 {
+  color: black;
+
+  small {
+    color: gray;
+  }
+}
+
+
 
 .compact {
   border: 1px solid #380919;
@@ -276,18 +301,18 @@ h1.category {
   text-align: center;
 }
 
+.btn-ico-size {
+  padding-top: 2px;
+  border: 1px solid #abe8f7;
+  background-color: #063a5a;
+  a i {
+    color: #abe8f7;
+  }
+}
+
 .control-separator {
   float: right;
   width: 10px;
-}
-
-.ico-size  {
-  padding-top:0;
-  border: 1px solid #abe8f7;
-
-  a {
-    color: #abe8f7;
-  }
 }
 
 .ico-color-default {
@@ -317,7 +342,7 @@ h1.category {
   }
 }
 
-.wrap {
+#wrap {
   min-height: calc(100vh - 140px);
   margin-bottom: -2px;
 }
@@ -345,17 +370,23 @@ h1.category {
 }
 
 .symbol-theme-1 {
-  background: #eee;
   i, span {
     color: #444;
   }
 }
 
 .symbol-theme-2 {
-  background: white;
   i, span {
     color: black;
   }
+}
+
+.symbol-theme-1-bg, .symbol-theme-1 {
+  background: #eee;
+}
+
+.symbol-theme-2-bg, .symbol-theme-2 {
+  background: white;
 }
 
 .symbol-lg {
@@ -380,4 +411,8 @@ h1.category {
 
 .wrap-symbols-theme {
   background: #eee;
+}
+
+#wrap-symbols {
+  padding-bottom: 20px;
 }

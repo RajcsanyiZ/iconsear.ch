@@ -25,10 +25,14 @@ $(document).ready(function() {
   // build list
   $symbols = $('#symbols');
 
+
+  var filterTag, symbol, tooltip;
+
   for(var i=0; i < symbols.length; i++) {
-    var symbol = symbols[i];
-    var tooltip = 'data-toggle="tooltip" data-placement="top" title="'+symbol.name+'"';
-    var $symbol = $('<div class="symbol pack-'+symbol.pack+'" keyword="'+symbol.keyword+'" id="'+i+'" '+tooltip+'>'+symbol.code+'</div>');
+    symbol = symbols[i];
+    tooltip = 'data-toggle="tooltip" data-placement="top" title="'+symbol.name+'"';
+    filterSocial = inArray(symbol.id, symbols_fontawesome_brand_icons)?' filter-social':'';
+    var $symbol = $('<div class="symbol pack-'+symbol.pack+filterSocial+'" keyword="'+symbol.keyword+'" id="'+i+'" '+tooltip+'>'+symbol.code+'</div>');
     $symbols.append($symbol);
   }
 
@@ -52,14 +56,20 @@ $(document).ready(function() {
   function refreshList() {
     var keyword = $('#search').val();
     var number_of_symbols = 0;
+    var filterSocial = $('#filter-social-btn').hasClass('badge-info');
     $('.symbol').each(function(index) {
       var $icon = $(this);
       if ($(this).attr('keyword').search(keyword) === -1) {
         $icon.hide();
       } else {
         if ($(this).is(packVisible.join())) {
-          $icon.show();
-          number_of_symbols++;
+          // filter social symbols
+          if( filterSocial || $icon.hasClass('filter-social') === false) {
+            $icon.show();
+            number_of_symbols++;
+          } else  {
+            $icon.hide();
+          }
         } else {
           $icon.hide();
         }
@@ -89,18 +99,24 @@ $(document).ready(function() {
   $('#ico-theme-1').click(function(e) {
     e.preventDefault();
     $('.symbol').removeClass('symbol-theme-2').addClass('symbol-theme-1');
+    $('#wrap').removeClass('symbol-theme-2-bg').addClass('symbol-theme-1-bg');
+    $('h1.category').removeClass('symbol-theme-2-h1').addClass('symbol-theme-1-h1');
     $('#wrap-symbols').addClass('wrap-symbols-theme');
   });
 
   $('#ico-theme-2').click(function(e) {
     e.preventDefault();
     $('.symbol').removeClass('symbol-theme-1').addClass('symbol-theme-2');
+    $('#wrap').removeClass('symbol-theme-1-bg').addClass('symbol-theme-2-bg');
+    $('h1.category').removeClass('symbol-theme-1-h1').addClass('symbol-theme-2-h1');
     $('#wrap-symbols').addClass('wrap-symbols-theme');
   });
 
   $('#ico-theme-default').click(function(e) {
     e.preventDefault();
     $('.symbol').removeClass('symbol-theme-1 symbol-theme-2');
+    $('#wrap').removeClass('symbol-theme-1-bg symbol-theme-2-bg');
+    $('h1.category').removeClass('symbol-theme-1-h1 symbol-theme-2-h1');
     $('#wrap-symbols').removeClass('wrap-symbols-theme');
   });
 
@@ -134,7 +150,6 @@ $(document).ready(function() {
 
     $('#infoSymbol').modal();
   })
-
 
   function inArray(needle, haystack) {
     var length = haystack.length;
