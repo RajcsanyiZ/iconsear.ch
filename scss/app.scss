@@ -205,34 +205,21 @@ h1.category {
   background-color: #054369;
   text-align: center;
   color: #73bdd0;
-  height: 60px;
+  height: 90px;
 
-  ul.footer-nav {
-    list-style: none;
-    font-size: 1.5em;
-    padding: 0;
-    margin: 0;
-
-    li {
-      display: inline-block;
-      padding: 10px 5px;
-
-      a {
-        color: #abe8f7;
-
-        &:hover {
-          background: none;
-          color: white;
-        }
-      }
-    }
+  .btn-download {
+    display: inline-block;
+    text-align: center;
+    min-width: 300px;
+    margin-top: 10px;
+    padding: 20px;
   }
 }
 
 #footer {
   background-color: #064d79;
   color: white;
-  height: 60px;
+  height: 40px;
   padding: 0;
   margin: 0;
 }
@@ -254,7 +241,7 @@ h1.category {
 }
 
 .copyright {
-  padding-top: 20px;
+  padding-top: 10px;
 
   color: rgba(255,255,255,.3);
 
@@ -331,7 +318,7 @@ h1.category {
 }
 
 .wrap {
-  min-height: calc(100vh - 110px);
+  min-height: calc(100vh - 140px);
   margin-bottom: -2px;
 }
 

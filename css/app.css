@@ -166,25 +166,18 @@ h1.category {
   background-color: #054369;
   text-align: center;
   color: #73bdd0;
-  height: 60px; }
-  #footer-menu ul.footer-nav {
-    list-style: none;
-    font-size: 1.5em;
-    padding: 0;
-    margin: 0; }
-    #footer-menu ul.footer-nav li {
-      display: inline-block;
-      padding: 10px 5px; }
-      #footer-menu ul.footer-nav li a {
-        color: #abe8f7; }
-        #footer-menu ul.footer-nav li a:hover {
-          background: none;
-          color: white; }
+  height: 90px; }
+  #footer-menu .btn-download {
+    display: inline-block;
+    text-align: center;
+    min-width: 300px;
+    margin-top: 10px;
+    padding: 20px; }
 
 #footer {
   background-color: #064d79;
   color: white;
-  height: 60px;
+  height: 40px;
   padding: 0;
   margin: 0; }
 
@@ -203,7 +196,7 @@ h1.category {
     border: 2px solid white; }
 
 .copyright {
-  padding-top: 20px;
+  padding-top: 10px;
   color: rgba(255, 255, 255, 0.3); }
   .copyright a {
     color: rgba(255, 255, 255, 0.3); }
@@ -258,7 +251,7 @@ h1.category {
     color: black; }
 
 .wrap {
-  min-height: calc(100vh - 110px);
+  min-height: calc(100vh - 140px);
   margin-bottom: -2px; }
 
 .symbol {
