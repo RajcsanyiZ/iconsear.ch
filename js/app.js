@@ -150,10 +150,12 @@ $(document).ready(function() {
     $('#symbol-keyword').text(symbol.keyword);
 
     // warning message show only brand icons
-    if (inArray(symbol.id, symbols_fontawesome_brand_icons)) {
-      $('#alert-font-awesome').show();
-    } else {
-      $('#alert-font-awesome').hide();
+    $('#alert-font-awesome').hide();
+    $('#alert-material').hide();
+    if (symbol.pack === 'font-awesome' && inArray(symbol.id, symbols_fontawesome_brand_icons)) {
+        $('#alert-font-awesome').show();
+    } else if(symbol.pack === 'material' && inArray(symbol.id, symbols_material_brand_icons)) {
+        $('#alert-material').show();
     }
 
     $('#infoSymbol').modal();
