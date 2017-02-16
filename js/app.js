@@ -30,9 +30,13 @@ $(document).ready(function() {
 
   for(var i=0; i < symbols.length; i++) {
     symbol = symbols[i];
-    tooltip = 'data-toggle="tooltip" data-placement="top" title="'+symbol.name+'"';
-    filterSocial = inArray(symbol.id, symbols_fontawesome_brand_icons)?' filter-social':'';
-    var $symbol = $('<div class="symbol pack-'+symbol.pack+filterSocial+'" keyword="'+symbol.keyword+'" id="'+i+'" '+tooltip+'>'+symbol.code+'</div>');
+    if (symbol.pack === 'font-awesome') {
+      filterSocial = inArray(symbol.id, symbols_fontawesome_brand_icons)?' filter-social':'';
+      var $symbol = $('<div class="symbol pack-'+symbol.pack+filterSocial+'" keyword="'+symbol.keyword+'" id="'+i+'">'+symbol.code+'</div>');
+    } else if(symbol.pack === 'material') {
+      // tooltip = 'data-toggle="tooltip" data-placement="top" title="'+symbol.name+'"';
+      var $symbol = $('<div class="symbol pack-'+symbol.pack+'" keyword="'+symbol.keyword+'" id="'+i+'" '/*+tooltip*/+'>'+symbol.code+'</div>');
+    }
     $symbols.append($symbol);
   }
 
@@ -51,12 +55,16 @@ $(document).ready(function() {
     if ($('#filter-font-awesome').hasClass("badge-info")) {
       packVisible.push('.pack-font-awesome');
     }
+    if ($('#filter-material').hasClass("badge-info")) {
+      packVisible.push('.pack-material');
+    }
   }
 
   function refreshList() {
-    var keyword = $('#search_field').val();
+    var keyword = $('#search_field').val().toLowerCase();
     var number_of_symbols = 0;
     var filterSocial = $('#filter-social-btn').hasClass('badge-info');
+
     $('.symbol').each(function(index) {
       var $icon = $(this);
       if ($(this).attr('keyword').search(keyword) === -1) {

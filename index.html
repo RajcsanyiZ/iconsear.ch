@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Symbol finder</title>
+    <title>GetMySymbol - A symbol finder</title>
     <meta charset="utf-8">
     <meta name="description" content="Font Awesome and Glyphicons symbol finder">
     <meta name="keywords" content="symbol,finder,search,font-awesome,glyphicons,html,entities">
@@ -14,7 +14,8 @@
     <link href="https://fonts.googleapis.com/css?family=Berkshire+Swash|Raleway" rel="stylesheet">
 
     <!-- import symbols: material icons -->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">-->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
 
     <!-- bootstrap css -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
@@ -96,9 +97,13 @@
       <!-- filter-box -->
       <div id="filter-box">
         <div class="container text-center">
-            <a href="#" class="tag switch-filter badge badge-info filter-switch" id="filter-font-awesome" data-toggle="tooltip" data-placement="bottom" title="select symbol set (as soon you can see more..)">
+            <a href="#" class="tag switch-filter badge badge-info filter-switch" id="filter-font-awesome" data-toggle="tooltip" data-placement="bottom">
               <i class="fa fa-check-square-o"></i>
               Font Awesome
+            </a>
+            <a href="#" class="tag switch-filter badge badge-info filter-switch" id="filter-material">
+              <i class="fa fa-check-square-o"></i>
+              Material Icons
             </a>
             <a href="#" class="tag switch-filter badge badge-danger filter-switch" id="filter-social-btn" data-toggle="tooltip" data-placement="bottom" title="filter social icons">
               <i class="fa fa-square-o"></i>
@@ -123,7 +128,7 @@
     <!-- footer-menu -->
     <div id="footer-menu">
       <div class="container text-center">
-          <a href="https://github.com/RajcsanyiZ/getmysymbol" class="btn btn-danger btn-download btn-lg">
+          <a href="https://github.com/RajcsanyiZ/getmesymbol" class="btn btn-danger btn-download btn-lg">
             <i class="fa fa-code-fork"></i>
             Fork me on GitHub
           </a>
@@ -206,6 +211,7 @@
     <script src="https://cdn.jsdelivr.net/clipboard.js/1.6.0/clipboard.min.js"></script>
     <!-- js: load data of symbols -->
     <script type="text/javascript" src="js/symbols_fontawesome.js"></script>
+    <script type="text/javascript" src="js/symbols_material.js"></script>
     <script type="text/javascript" src="js/symbols.js"></script>
     <!-- js: applicaiton logic -->
     <script type="text/javascript" src="js/app.js"></script>

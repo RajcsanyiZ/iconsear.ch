@@ -1,5 +1,8 @@
 	/**
 	 * Font Awesome Symbols
+	 *
+	 * http://fontawesome.io
+	 *
 	 **/
   	var symbols_fontawesome = [
 		{
