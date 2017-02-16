@@ -16,3 +16,9 @@ _If you have time to help to organise the data of symbols please join to this Gi
 - Extends symbols with Material Design Icons (it use with http://zavoloklom.github.io)
 - Temporary the Bootstrap Glyphicons removed. The createor of Glyphicons asked that. As soon he will finish the new symbols.
 - the modal window show alerts related with brand icons of Font Awesome _(Please do not use brand logos for any purpose except to ...)_
+
+## Tasks
+- [ ] Creating licensing information about the project
+- [ ] Link licensing infomration about symbol sets
+- [ ] Compact each Font Awesome aliases into one symbol with multiple aliases
+- [ ] Ask some friend invidually to share the project :)
