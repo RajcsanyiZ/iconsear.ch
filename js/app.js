@@ -34,8 +34,8 @@ $(document).ready(function() {
       filterSocial = inArray(symbol.id, symbols_fontawesome_brand_icons)?' filter-social':'';
       var $symbol = $('<div class="symbol pack-'+symbol.pack+filterSocial+'" keyword="'+symbol.keyword+'" id="'+i+'">'+symbol.code+'</div>');
     } else if(symbol.pack === 'material') {
-      // tooltip = 'data-toggle="tooltip" data-placement="top" title="'+symbol.name+'"';
-      var $symbol = $('<div class="symbol pack-'+symbol.pack+'" keyword="'+symbol.keyword+'" id="'+i+'" '/*+tooltip*/+'>'+symbol.code+'</div>');
+      filterSocial = inArray(symbol.id, symbols_material_brand_icons)?' filter-social':'';
+      var $symbol = $('<div class="symbol pack-'+symbol.pack+filterSocial+'" keyword="'+symbol.keyword+'" id="'+i+'" '/*+tooltip*/+'>'+symbol.code+'</div>');
     }
     $symbols.append($symbol);
   }

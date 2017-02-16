@@ -4669,3 +4669,5 @@
 	      name: 'youtube'
 	    }
 	];
+
+	var symbols_material_brand_icons = ['android-alt', 'android', 'apple', 'behance', 'codepen', 'dribbble', 'dropbox', 'evernote', 'facebook-box', 'facebook', 'github-box', 'github', 'google-drive', 'google-earth', 'google-glass', 'google-maps', 'google-pages', 'google-play', 'google-plus-box', 'google-plus', 'google', 'instagram', 'language-css3', 'language-html5', 'language-javascript', 'language-python-alt', 'language-python', 'lastfm', 'linkedin-box', 'paypal', 'pinterest-box', 'pocket', 'polymer', 'rss', 'share', 'stackoverflow', 'steam-square', 'steam', 'twitter-box', 'twitter', 'vk', 'wikipedia', 'windows', '500px', '8tracks', 'amazon', 'blogger', 'delicious', 'disqus', 'flattr', 'flickr', 'github-alt', 'google-old', 'linkedin', 'odnoklassniki', 'outlook', 'paypal-alt', 'pinterest', 'playstation', 'reddit', 'skype', 'slideshare', 'soundcloud', 'tumblr', 'twitch', 'vimeo', 'whatsapp', 'xbox', 'yahoo', 'youtube-play', 'youtube'];

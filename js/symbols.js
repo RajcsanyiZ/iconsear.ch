@@ -23,7 +23,7 @@
 		var symbol = symbols_material[i];
 		symbol['pack'] = 'material';
 		symbol['code'] = '<i class="zmdi zmdi-'+symbol.id+'"></i>';
-		symbol['packLink'] = 'https://material.io/icons/';
-		symbol['link'] = 'https://material.io/icons/#'+symbol.id;
+		symbol['packLink'] = 'http://zavoloklom.github.io/material-design-iconic-font/icons.html';
+		symbol['link'] = 'http://zavoloklom.github.io/material-design-iconic-font/icons.html#'+symbol.id;
 		symbols.push(symbol);
 	}
