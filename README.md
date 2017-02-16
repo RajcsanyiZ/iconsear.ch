@@ -1,10 +1,11 @@
 # Get My Symbol
 https://rajcsanyiz.github.io/getmysymbol
 
-Symbol finder for Font Awesome.
+Symbol finder for Font Awesome and Material Design Icons.
 
 ## Description
-Font Awesome and (bootstrap) Glyphicons have a lot of free symbols. These tools help you to find the proper icon more easier and quicker.
+These tools help you to find the proper icon/symbol to your app.
+
 
 This project is beta version now.
 
@@ -12,5 +13,6 @@ This project is beta version now.
 _If you have time to help to organise the data of symbols please join to this GitHub project._
 
 ## Notes
+- Extends symbols with Material Design Icons (it use with http://zavoloklom.github.io)
 - Temporary the Bootstrap Glyphicons removed. The createor of Glyphicons asked that. As soon he will finish the new symbols.
 - the modal window show alerts related with brand icons of Font Awesome _(Please do not use brand logos for any purpose except to ...)_
