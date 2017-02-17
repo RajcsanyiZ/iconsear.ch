@@ -159,7 +159,7 @@ $(document).ready(function() {
     }
 
     $('#infoSymbol').modal();
-  })
+  });
 
   function inArray(needle, haystack) {
     var length = haystack.length;
@@ -171,5 +171,17 @@ $(document).ready(function() {
 
   $('[data-toggle="tooltip"]').tooltip()
 
-  new Clipboard('.btn');
+  // open terms.html to a modal window
+  $.get('terms.html', function(data) {
+    $('#terms-content').html($('#wrap-terms-inner', data));
+  });
+
+  // open terms modal
+  $('#btn-terms').click(function(e) {
+    e.preventDefault();
+    $('#terms').modal();
+  });
+
+
+ new Clipboard('.btn');
 });
