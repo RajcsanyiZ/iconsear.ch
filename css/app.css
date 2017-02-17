@@ -324,4 +324,27 @@ h1.symbol-theme-2-h1 {
 #wrap-symbols {
   padding-bottom: 20px; }
 
+.wrap-light {
+  background: lightgray;
+  color: black; }
+
+#wrap-terms h1 {
+  margin: 10px 0;
+  font-family: 'Raleway', sans-serif;
+  font-size: 2em;
+  font-weight: bold; }
+#wrap-terms h2 {
+  margin: 10px -10px;
+  font-family: 'Raleway', sans-serif;
+  font-size: 1.7em;
+  font-weight: normal;
+  background: rgba(6, 77, 121, 0.15);
+  padding: 10px 5px 10px 20px;
+  border-radius: 20px; }
+#wrap-terms h3 {
+  margin: 10px 0;
+  font-family: 'Raleway', sans-serif;
+  font-size: 1.3em;
+  font-weight: normal; }
+
 /*# sourceMappingURL=app.css.map */
