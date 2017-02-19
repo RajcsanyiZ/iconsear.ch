@@ -20,10 +20,14 @@ _If you have time to help to organise the data of symbols please join to this Gi
 - Facebook share works propely with tumbnail (extends meta fb tags...)
 - Terms of Use and licensing information is done (page and fontsets too
 - End of the Terms of Use is placed Credits
+- Font Awesome alias placed to keyword (no symbol duplicity)
 
 ## Tasks
-- [ ] Compact each Font Awesome aliases into one symbol with multiple aliases
-- [ ] Ask some friend invidually to share the project :)
+- [ ] create project Facebook page
+- [ ] create project Twitter page
+- [ ] create hover infobox (symbol pack name + symbol id)
+- [ ] create share function (facebook, google+, twitter, linkedin)
+
 
 ## Credits
 - project first owner: Rajcsányi Zoltán 
