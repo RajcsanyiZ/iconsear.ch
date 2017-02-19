@@ -21,11 +21,11 @@ _If you have time to help to organise the data of symbols please join to this Gi
 - Terms of Use and licensing information is done (page and fontsets too
 - End of the Terms of Use is placed Credits
 - Font Awesome alias placed to keyword (no symbol duplicity)
+- Add hover info to symbols (with symbol pack name and symbol id)
 
 ## Tasks
 - [ ] create project Facebook page
 - [ ] create project Twitter page
-- [ ] create hover infobox (symbol pack name + symbol id)
 - [ ] create share function (facebook, google+, twitter, linkedin)
 
 
