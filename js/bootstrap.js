@@ -44,16 +44,18 @@ for (i=0; i < symbols_material.length; i++) {
 // load symbols into DOM
 $symbols = $('#symbols');
 
-var filterTag, symbol, tooltip;
+var filterTag, symbol, title;
 
 for(var i=0; i < symbols.length; i++) {
   symbol = symbols[i];
   if (symbol.pack === 'font-awesome') {
     filterSocial = inArray(symbol.id, symbols_fontawesome_brand_icons)?' filter-social':'';
-    var $symbol = $('<div class="symbol pack-'+symbol.pack+filterSocial+'" keyword="'+symbol.keyword+'" id="'+i+'">'+symbol.code+'</div>');
+    title = ' title="<h1><i class=\'fa fa-'+symbol.id+'\'></i></h1>Font Awesome<br />'+symbol.id+'"';
+    var $symbol = $('<div class="symbol pack-'+symbol.pack+filterSocial+'" keyword="'+symbol.keyword+'" id="'+i+'"'+title+'>'+symbol.code+'</div>');
   } else if(symbol.pack === 'material') {
     filterSocial = inArray(symbol.id, symbols_material_brand_icons)?' filter-social':'';
-    var $symbol = $('<div class="symbol pack-'+symbol.pack+filterSocial+'" keyword="'+symbol.keyword+'" id="'+i+'" '/*+tooltip*/+'>'+symbol.code+'</div>');
+    title = ' title="<h1><i class=\'zmdi zmdi-'+symbol.id+'\'></i></h1>Material Icons<br>'+symbol.id+'"';
+    var $symbol = $('<div class="symbol pack-'+symbol.pack+filterSocial+'" keyword="'+symbol.keyword+'" id="'+i+'"'+title+'>'+symbol.code+'</div>');
   }
   $symbols.append($symbol);
 }

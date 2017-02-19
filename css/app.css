@@ -328,12 +328,12 @@ h1.symbol-theme-2-h1 {
   background: lightgray;
   color: black; }
 
-#wrap-terms h1 {
+#wrap-terms-inner h1 {
   margin: 10px 0;
   font-family: 'Raleway', sans-serif;
   font-size: 2em;
   font-weight: bold; }
-#wrap-terms h2 {
+#wrap-terms-inner h2 {
   margin: 10px -10px;
   font-family: 'Raleway', sans-serif;
   font-size: 1.7em;
@@ -341,10 +341,16 @@ h1.symbol-theme-2-h1 {
   background: rgba(6, 77, 121, 0.15);
   padding: 10px 5px 10px 20px;
   border-radius: 20px; }
-#wrap-terms h3 {
+#wrap-terms-inner h3 {
   margin: 10px 0;
   font-family: 'Raleway', sans-serif;
   font-size: 1.3em;
   font-weight: normal; }
+
+.tooltip .tooltip-inner {
+  background: rgba(5, 40, 62, 0.9);
+  padding: 20px;
+  width: 250px;
+  border: 2px solid #0a88d5; }
 
 /*# sourceMappingURL=app.css.map */

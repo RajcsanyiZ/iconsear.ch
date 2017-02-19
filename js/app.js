@@ -155,6 +155,11 @@ $('#btn-terms').click(function(e) {
   $('#terms').modal();
 });
 
+// show every symbols tooltip with symbol pack and symbol id
+$('.symbol').tooltip({
+  trigger: 'hover',
+  html: true
+});
 
 // use clipboard jquery plugin to copy source an unicode info of symbol
 new Clipboard('.btn');
