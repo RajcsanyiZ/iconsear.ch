@@ -3,6 +3,12 @@ body {
   background-color: #222;
   font-family: 'Raleway', sans-serif; }
 
+#symbols {
+  text-align: center; }
+
+.clear-both {
+  clear: both; }
+
 #header h1 {
   padding-top: 10px;
   font-family: 'Berkshire Swash', cursive; }
@@ -182,18 +188,36 @@ h1.symbol-theme-2-h1 {
   background-color: #054369;
   text-align: center;
   color: #73bdd0;
-  height: 90px; }
-  #footer-menu .btn-download {
+  min-height: 110px; }
+  #footer-menu .btn-github {
     display: inline-block;
     text-align: center;
     min-width: 300px;
     margin-top: 10px;
+    margin-bottom: 20px;
     padding: 20px; }
+  #footer-menu h1 {
+    font-family: 'Berkshire Swash', cursive;
+    font-size: 1.5em;
+    padding: 10px 0 0;
+    margin: 0 0; }
+  #footer-menu .btn-share {
+    min-width: 50px;
+    margin-top: 10px;
+    margin-right: 5px;
+    padding: 10px; }
+    #footer-menu .btn-share i {
+      font-size: 1.5em;
+      color: #054369; }
+    #footer-menu .btn-share:hover {
+      background: #d9534f; }
+      #footer-menu .btn-share:hover i {
+        color: white; }
 
 #footer {
   background-color: #064d79;
   color: white;
-  height: 40px;
+  min-height: 40px;
   padding: 0;
   margin: 0; }
 
@@ -225,18 +249,18 @@ h1.symbol-theme-2-h1 {
 /* color and size buttons */
 .control-button {
   float: right;
-  margin: 12px 5px 5px;
-  padding: 5px;
-  font-size: 2em;
+  margin: 12px 3px 3px;
+  padding: 0px;
+  font-size: 1.8em;
   border: 2px solid rgba(255, 255, 255, 0.3);
   box-shadow: 1px 1px 2px black;
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   border-radius: 6px;
   text-align: center; }
 
 .btn-ico-size {
-  padding-top: 2px;
+  padding-top: 0px;
   border: 1px solid #abe8f7;
   background-color: #063a5a; }
   .btn-ico-size a i {
@@ -268,7 +292,7 @@ h1.symbol-theme-2-h1 {
     color: black; }
 
 #wrap {
-  min-height: calc(100vh - 140px);
+  min-height: calc(100vh - 295px);
   margin-bottom: -2px; }
 
 .symbol {
@@ -351,6 +375,9 @@ h1.symbol-theme-2-h1 {
   background: rgba(5, 40, 62, 0.9);
   padding: 20px;
   width: 250px;
-  border: 2px solid #0a88d5; }
+  border: 2px solid #0a88d5;
+  color: white; }
+  .tooltip .tooltip-inner h1 i {
+    font-size: 3em; }
 
 /*# sourceMappingURL=app.css.map */

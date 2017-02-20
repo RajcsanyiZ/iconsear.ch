@@ -44,7 +44,7 @@ function refreshList() {
     } else {
       if ($(this).is(packVisible.join())) {
         // filter social symbols
-        if( filterSocial || $icon.hasClass('filter-social') === false) {
+        if(filterSocial && $icon.hasClass('filter-social') || !filterSocial && !$icon.hasClass('filter-social')) {
           $icon.show();
           number_of_symbols++;
         } else  {
