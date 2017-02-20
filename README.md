@@ -6,7 +6,7 @@ Symbol finder for Font Awesome and Material Design Icons.
 ![preview](https://rajcsanyiz.github.io/getmysymbol/img/thumb01.png "thumbnail of the app")
 
 ## Description
-These tools help you to find the proper icon/symbol to your app.
+These tool helps you to find the proper icon/symbol to your app.
 
 This project is beta version now.
 
@@ -22,11 +22,10 @@ _If you have time to help to organise the data of symbols please join to this Gi
 - End of the Terms of Use is placed Credits
 - Font Awesome alias placed to keyword (no symbol duplicity)
 - Add hover info to symbols (with symbol pack name and symbol id)
+- Add share buttons on bottom of the page
 
 ## Tasks
-- [ ] create project Facebook page
-- [ ] create project Twitter page
-- [ ] create share function (facebook, google+, twitter, linkedin)
+- [X] extends symbols keywords with original thematic categories
 
 
 ## Credits
