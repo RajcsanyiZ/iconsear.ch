@@ -1,40 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>GetMySymbol - A symbol finder</title>
+    <title>IconSear.ch - The free symbol finder</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-    <meta name="description" content="Font Awesome and Material Icons symbol finder">
-    <meta name="keywords" content="symbol,finder,search,font-awesome,glyphicons,html,entities">
+    <meta name="description" content="Free Symbol Finder">
+    <meta name="keywords" content="symbol,icon,finder,search,font-awesome,material,design,html,entities">
     <meta name="author" content="Rajcsányi Zoltán <info@rajcsanyizoltan.hu>">
 
     <meta property="og:locale" content="en_US" />
-    <meta property="og:url" content="https://rajcsanyiz.github.io/getmysymbol/" />
+    <meta property="og:url" content="http://iconsear.ch/" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Get My Symbol" />
+    <meta property="og:title" content="IconSear.ch - The Free Symbol Finder" />
     <meta property="og:description" content="Font Awesome and Material Icons symbol finder" />
-    <meta property="og:image" content="https://rajcsanyiz.github.io/getmysymbol/img/thumb01.png" />
+    <meta property="og:image" content="http://iconsear.ch/img/thumb02.png" />
     <meta property="fb:app_id" content="1643202982652274" />
 
     <link rel="apple-touch-icon-precomposed" href="/img/appleicon.png" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@getmysymbol" />
-    <meta name="twitter:title" content="Get My Symbol" />
+    <meta name="twitter:site" content="@iconsear.ch" />
+    <meta name="twitter:title" content="IconSear.ch - The Free Symbol Finder" />
 
-    <link rel="copyright" href="https://rajcsanyiz.github.io/getmysymbol/terms.html" />
+    <link rel="copyright" href="http://iconsear.ch/terms.html" />
 
     <meta http-equiv="cleartype" content="on" />
     <meta name="skype_toolbar" content="skype_toolbar_parser_compatible" />
     <meta name="msapplication-tap-highlight" content="no" />
-    <meta name="application-name" content="GetMySymbol" />
+    <meta name="application-name" content="IconSear.ch - The Free Symbol Finder" />
     <meta name="msapplication-starturl" content="/" />
     <meta name="HandheldFriendly" content="true" />
     <meta name="theme-color" content="#064d79" />
     <meta name="msapplication-navbutton-color" content="#064d79" />
     <meta name="msapplication-TileColor" content="#064d79" />
-    <meta name="msapplication-TileImage" content="https://rajcsanyiz.github.io/getmysymbol/img/thumb01.png" />
+    <meta name="msapplication-TileImage" content="http://iconsear.ch/img/thumb02.png" />
     <meta name="format-detection" content="telephone=no" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
@@ -63,6 +63,8 @@
 
   </head>
   <body>
+
+    <!-- info message -->
     <div id="wrap">
       <div id="header">
         <div class="container">
@@ -70,45 +72,63 @@
             <div class="col-lg-6">
               <!-- title -->
               <h1>
-                Get My Symbol
+                IconSear.ch
                 <small>BETA</small>
               </h1>
             </div>
             <div class="col-lg-6 text-right">
-              <!-- symbol preview sizes -->
-              <div class="control-button btn-ico-size">
-                <a id="ico-size-small" href="#" data-toggle="tooltip" data-placement="bottom" title="small symbol size">
-                  <i class="fa fa-th"></i>
-                </a>
-              </div>
-              <div class="control-button btn-ico-size">
-                <a id="ico-size-default" href="#" data-toggle="tooltip" data-placement="bottom" title="normal symbol size">
-                  <i class="fa fa-th-large"></i>
-                </a>
-              </div>
-              <div class="control-button btn-ico-size">
-                <a id="ico-size-large" href="#" data-toggle="tooltip" data-placement="bottom" title="large symbol size">
-                  <i class="fa fa-stop"></i>
-                </a>
-              </div>
-              <div class="control-separator">&nbsp;</div>
+                <!-- edit mode: copy html or show modal info -->
+                <div class="btn-group mr-2" role="group" aria-label="First group">
+                  <button type="button" id="mode-copy-html" class="btn btn-danger btn-symbol-mode" style="padding: 8px 10px; margin-top: 3px;" data-toggle="tooltip" data-placement="bottom" title="HTML to Clipboard">
+                    <div style="padding: 6px;">
+                      <i class="fa fa-html5"></i>
+                    </div>
+                  </button>
+                  <button type="button" id="mode-copy-css" class="btn btn-info btn-symbol-mode" style="padding: 8px 10px; margin-top: 3px;" data-toggle="tooltip" data-placement="bottom" title="CSS to Clipboard">
+                    <div style="padding: 6px;">
+                      <i class="fa fa-css3"></i>
+                    </div>
+                  </button>
+                  <button type="button" id="mode-show-info" class="btn btn-info btn-symbol-mode" style="padding: 8px 10px; margin-top: 3px;" data-toggle="tooltip" data-placement="bottom" title="Open Info Modal ">
+                    <div style="padding: 5px;">
+                      <i class="fa fa-info-circle"></i>
+                    </div>
+                  </button>
+                </div>
 
-              <!-- symbol preview themes -->
-              <div class="control-button ico-color ico-color-light">
-                <a id="ico-theme-1" href="#" data-toggle="tooltip" data-placement="bottom" title="default theme">
-                  <i class="fa fa-font"></i>
-                </a>
-              </div>
-              <div class="control-button ico-color ico-color-dark">
-                <a id="ico-theme-2" href="#" data-toggle="tooltip" data-placement="bottom" title="light constrast theme">
-                  <i class="fa fa-font"></i>
-                </a>
-              </div>
-              <div class="control-button ico-color ico-color-default">
-                <a id="ico-theme-default" href="#" data-toggle="tooltip" data-placement="bottom" title="light theme">
-                  <i class="fa fa-font"></i>
-                </a>
-              </div>
+                <!-- symbols size switch -->
+                <div class="btn-group mr-2" role="group" aria-label="First group">
+                  <button type="button" id="ico-size-large" class="btn btn-info btn-symbol-size" style="padding: 8px 10px; margin-top: 3px;" data-toggle="tooltip" data-placement="bottom" title="Large Icons">
+                    <div style="padding: 6px;">
+                      <i class="fa fa-stop"></i>
+                    </div>
+                  </button>
+                  <button type="button" id="ico-size-default" class="btn btn-danger btn-symbol-size" style="padding: 8px 10px; margin-top: 3px;" data-toggle="tooltip" data-placement="bottom" title="Normal Icons">
+                    <div style="padding: 5px;">
+                      <i class="fa fa-th-large"></i>
+                    </div>
+                  </button>
+                  <button type="button" id="ico-size-small" class="btn btn-info btn-symbol-size" style="padding: 8px 10px; margin-top: 3px;" data-toggle="tooltip" data-placement="bottom" title="Small Icons">
+                    <div style="padding: 5px;">
+                      <i class="fa fa-th"></i>
+                    </div>
+                  </button>
+                </div>
+
+                <!-- symbols theme switcher -->
+                <div class="btn-group mr-2" role="group" aria-label="Second group">
+                  <button type="button" id="ico-theme-default" class="btn btn-danger btn-symbol-theme" style="padding: 8px 10px; margin-top: 3px;" data-toggle="tooltip" data-placement="bottom" title="Dark Theme">
+                    <div style="background-color: #222; color: #abe8f7; padding: 5px; border-radius: 6px; box-shadow: 1px 1px 2px black">
+                      <i class="zmdi zmdi-brightness-6"></i>
+                    </div>
+                  </button>
+                  <button type="button" id="ico-theme-2" class="btn btn-info btn-symbol-theme" style="padding: 8px 10px; margin-top: 3px;" data-toggle="tooltip" data-placement="bottom" title="Light Theme">
+                    <div style="background-color: white; color: black; padding: 5px; border-radius: 6px; box-shadow: 1px 1px 2px black">
+                      <i class="zmdi zmdi-brightness-6"></i>
+                    </div>
+                  </button>
+
+                </div>
             </div>
           </div>
         </div>
@@ -121,7 +141,7 @@
               <div class="input-group-btn">
                 <button class="btn btn-default" type="button"><i class="fa fa-search"></i></button>
               </div>
-             <input type="text" class="form-control" placeholder="name of symbol" id="search_field">
+             <input type="text" class="form-control" placeholder="keyword" id="search_field">
           </div><!-- /btn-group -->
         </div> <!-- /search-box -->
       </div>
@@ -129,7 +149,7 @@
       <!-- filter-box -->
       <div id="filter-box">
         <div class="container text-center">
-            <a href="#" class="tag switch-filter badge badge-info filter-switch" id="filter-font-awesome" data-toggle="tooltip" data-placement="bottom">
+            <a href="#" class="tag switch-filter badge badge-info filter-switch" id="filter-font-awesome">
               <i class="fa fa-check-square-o"></i>
               Font Awesome
             </a>
@@ -139,8 +159,7 @@
             </a>
             <a href="#" class="tag switch-filter badge badge-danger filter-switch" id="filter-social-btn" data-toggle="tooltip" data-placement="bottom" title="filter social icons">
               <i class="fa fa-square-o"></i>
-              Brand Icons
-              <i class="fa fa-filter"></i>
+              Brand Icons Only
             </a>
         </div>
       </div><!-- /filter-box -->
@@ -148,8 +167,9 @@
       <!-- wrap-symbols-->
       <div id="wrap-symbols">
         <div class="container">
+          <div class="alert alert-warning" id="info-message"></div>
           <h1 class="category">
-            Symbols <small id="number-of-symbols">0</small>
+            Icons <small id="number-of-symbols">0</small>
           </h1>
           <div  id="symbols"></div>
         </div>
@@ -161,73 +181,71 @@
 
     <!-- footer-menu -->
     <div id="footer-menu">
-      <h1>Share</h1>
       <div class="container text-center">
         <!-- Share on Facebook -->
-        <a href="https://www.facebook.com/dialog/share?href=https://rajcsanyiz.github.io/getmysymbol/&amp;app_id=1643202982652274&amp;display=page&amp;redirect_uri=https://rajcsanyiz.github.io/getmysymbol/" rel="noopener noreferrer" class="btn btn-warning btn-lg btn-share" title="Share on Facebook">
+        <a href="https://www.facebook.com/dialog/share?href=http://iconsear.ch/&amp;app_id=1643202982652274&amp;display=page&amp;redirect_uri=http://iconsear.ch/" rel="noopener noreferrer" class="btn btn-warning btn-lg btn-share" title="Share on Facebook">
           <i class="fa fa-facebook"></i>
         </a>
 
         <!-- Share on Facebook (message) -->
-        <a href="http://www.facebook.com/dialog/send?app_id=1643202982652274&amp;link=https://rajcsanyiz.github.io/getmysymbol/&amp;redirect_uri=href=https://rajcsanyiz.github.io/getmysymbol/" rel="noopener noreferrer" class="btn btn-warning btn-lg btn-share" title="Send on Facebook">
+        <a href="http://www.facebook.com/dialog/send?app_id=1643202982652274&amp;link=http://iconsear.ch/&amp;redirect_uri=href=http://iconsear.ch/" rel="noopener noreferrer" class="btn btn-warning btn-lg btn-share" title="Send on Facebook">
           <i class="zmdi zmdi-comment-text-alt"></i>
         </a>
 
         <!-- Share on Twitter -->
-        <a href="https://twitter.com/intent/tweet?source=https://rajcsanyiz.github.io/getmysymbol/&amp;url=https://rajcsanyiz.github.io/getmysymbol/&amp;via=GetMySymbol&amp;text=Symbol finder&amp;related=rajcsanyiz" rel="noopener noreferrer" class="btn btn-warning btn-lg btn-share" title="Share on Twitter">
+        <a href="https://twitter.com/intent/tweet?source=http://iconsear.ch/&amp;url=http://iconsear.ch/&amp;via=IconSear.ch&amp;text=Symbol finder&amp;related=rajcsanyiz" rel="noopener noreferrer" class="btn btn-warning btn-lg btn-share" title="Share on Twitter">
           <i class="fa fa-twitter"></i>
         </a>
 
         <!-- Share on Google+-->
-        <a href="https://plus.google.com/share?url=https://rajcsanyiz.github.io/getmysymbol/&hl=en" rel="noopener noreferrer" class="btn btn-warning btn-lg btn-share" title="Share on Google+">
+        <a href="https://plus.google.com/share?url=http://iconsear.ch/&hl=en" rel="noopener noreferrer" class="btn btn-warning btn-lg btn-share" title="Share on Google+">
           <i class="fa fa-google-plus"></i>
         </a>
 
         <!-- Share on Tumblr -->
-        <a href="https://tumblr.com/widgets/share/tool?canonicalUrl=https://rajcsanyiz.github.io/getmysymbol/" rel="noopener noreferrer" class="btn btn-warning btn-lg btn-share" title="Share on Tumblr">
+        <a href="https://tumblr.com/widgets/share/tool?canonicalUrl=http://iconsear.ch/" rel="noopener noreferrer" class="btn btn-warning btn-lg btn-share" title="Share on Tumblr">
           <i class="fa fa-tumblr"></i>
         </a>
 
         <!-- Share on Reddit -->
-        <a href="https://www.reddit.com/submit?url=https://rajcsanyiz.github.io/getmysymbol/&amp;title=Symbol finder" rel="noopener noreferrer" class="btn btn-warning btn-lg btn-share" title="Share on Reddit">
+        <a href="https://www.reddit.com/submit?url=http://iconsear.ch/&amp;title=Symbol finder" rel="noopener noreferrer" class="btn btn-warning btn-lg btn-share" title="Share on Reddit">
           <i class="fa fa-reddit-alien"></i>
         </a>
 
         <!-- Share on LinkedIn -->
-        <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://rajcsanyiz.github.io/getmysymbol/" rel="noopener noreferrer" class="btn btn-warning btn-lg btn-share" title="Share on LinkedIn">
+        <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http://iconsear.ch/" rel="noopener noreferrer" class="btn btn-warning btn-lg btn-share" title="Share on LinkedIn">
           <i class="fa fa-linkedin"></i>
         </a>
 
         <!-- Submit to Stumbleupon -->
-        <a href="http://www.stumbleupon.com/submit?url=https://rajcsanyiz.github.io/getmysymbol/" rel="noopener noreferrer" class="btn btn-warning btn-lg btn-share" title="Submit to Stumbleupon">
+        <a href="http://www.stumbleupon.com/submit?url=http://iconsear.ch/" rel="noopener noreferrer" class="btn btn-warning btn-lg btn-share" title="Submit to Stumbleupon">
           <i class="fa fa-stumbleupon-circle"></i>
         </a>
 
         <!--Save on GetPocket -->
-        <a href="https://getpocket.com/edit?url=https://rajcsanyiz.github.io/getmysymbol/" rel="noopener noreferrer" class="btn btn-warning btn-lg btn-share" title="Save on GetPocket">
+        <a href="https://getpocket.com/edit?url=http://iconsear.ch/" rel="noopener noreferrer" class="btn btn-warning btn-lg btn-share" title="Save on GetPocket">
           <i class="fa fa-get-pocket"></i>
         </a>
 
         <!-- Share on VKontakte -->
-        <a href="http://vk.com/share.php?url=https://rajcsanyiz.github.io/getmysymbol/&amp;title=Symbol finder" rel="noopener noreferrer" class="btn btn-warning btn-lg btn-share" title="Share on VKontakte">
+        <a href="http://vk.com/share.php?url=http://iconsear.ch/&amp;title=Symbol finder" rel="noopener noreferrer" class="btn btn-warning btn-lg btn-share" title="Share on VKontakte">
           <i class="fa fa-vk"></i>
         </a>
 
         <!-- Share on Wordpress -->
-        <a href="http://wordpress.com/press-this.php?u=https://rajcsanyiz.github.io/getmysymbol/&amp;title=Symbol finder" rel="noopener noreferrer" class="btn btn-warning btn-lg btn-share" title="Share on Wordpress">
+        <a href="http://wordpress.com/press-this.php?u=http://iconsear.ch/&amp;title=Symbol finder" rel="noopener noreferrer" class="btn btn-warning btn-lg btn-share" title="Share on Wordpress">
           <i class="fa fa-wordpress"></i>
         </a>
 
         <!-- Share on Pintrest -->
-        <a href="https://pinterest.com/pin/create/button/?url=https%3A//rajcsanyiz.github.io/getmysymbol/%20&media=https%3A//rajcsanyiz.github.io/getmysymbol/img/thumb01.png%20&description=Font%20Awesome%20and%20Material%20Icon%20symbol%20finder." rel="noopener noreferrer" class="btn btn-warning btn-lg btn-share" title="Share on Pintrest">
+        <a href="https://pinterest.com/pin/create/button/?url=http%3A//iconsear.ch/%20&media=http%3A//iconsear.ch/img/thumb02.png%20&description=IconSear.ch%20-%20The%20Free%20Symbol%20Finder" rel="noopener noreferrer" class="btn btn-warning btn-lg btn-share" title="Share on Pintrest">
           <i class="fa fa-pinterest-p"></i>
         </a>
 
         <div class="clear-both"></div>
       </div>
-      <h1>or Join</h1>
       <div class="container text-center">
-        <a href="https://github.com/RajcsanyiZ/getmysymbol" class="btn btn-danger btn-github btn-lg">
+        <a href="https://github.com/RajcsanyiZ/iconsear.ch" class="btn btn-danger btn-github btn-lg">
           <i class="fa fa-code-fork"></i>
           Fork me on GitHub
         </a>
@@ -267,20 +285,24 @@
               <tr>
                 <th class="text-right">HTML</th>
                 <td><strong><code id="symbol-code"></code></strong></td>
+                <!-- bugfix needed
                 <td width="50">
-                  <button title="Copy to Clipboard" data-clipboard-target="#symbol-code" class="btn btn-info">
+                  <button type="button" title="Copy to Clipboard" id='copy-html-clipboard' class="btn btn-info">
                     <i class="fa fa-clipboard"></i>
                   </button>
                 </td>
+                -->
               </tr>
               <tr>
                 <th class="text-right">CSS</th>
                 <td><code id="symbol-unicode"></code></td>
+                <!-- bugfix needed
                 <td>
-                  <button title="Copy to Clipboard" data-clipboard-target="#symbol-unicode" class="btn btn-info">
+                  <button type="button" title="Copy to Clipboard" id='copy-css-clipboard' class="btn btn-info">
                     <i class="fa fa-clipboard"></i>
                   </button>
                 </td>
+                -->
               </tr>
               <tr>
                 <th class="text-right">KEYWORDS</th>

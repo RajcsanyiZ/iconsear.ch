@@ -1,3 +1,7 @@
+// hide message info
+var $infoMsg = $('#info-message');
+$infoMsg.hide();
+
 // visible of symbol packs
 var packVisible=[];
 filterPack();
@@ -58,87 +62,152 @@ function refreshList() {
   $('#number-of-symbols').text(number_of_symbols);
 }
 
+// edit mode: copy or info modal
+$('.btn-symbol-mode').click(function() {
+  $(this).siblings().removeClass('btn-danger').addClass('btn-info');
+  $(this).removeClass('btn-info').addClass('btn-danger');
+});
+
+// higligh of symbol-theme buttons
+$('.btn-symbol-theme').click(function() {
+  $(this).siblings().removeClass('btn-danger').addClass('btn-info');
+  $(this).removeClass('btn-info').addClass('btn-danger');
+});
+
+// higlight of symbol-size buttons
+$('.btn-symbol-size').click(function() {
+  $(this).siblings().removeClass('btn-danger').addClass('btn-info');
+  $(this).removeClass('btn-info').addClass('btn-danger');
+});
+
 // change size of symbols to small
-$('#ico-size-small').click(function(e) {
-  e.preventDefault();
+$('#ico-size-small').click(function() {
   $('.symbol').removeClass('symbol-lg').addClass('symbol-sm');
 });
 
 // change size of symbols to medium
-$('#ico-size-default').click(function(e) {
-  e.preventDefault();
+$('#ico-size-default').click(function() {
   $('.symbol').removeClass('symbol-lg symbol-sm');
 });
 
 // change size of symbols to large
-$('#ico-size-large').click(function(e) {
-  e.preventDefault();
+$('#ico-size-large').click(function() {
   $('.symbol').removeClass('symbol-sm').addClass('symbol-lg');
 });
 
 //  change theme of symbols to light contrast
-$('#ico-theme-1').click(function(e) {
-  e.preventDefault();
+$('#ico-theme-1').click(function() {
   $('.symbol').removeClass('symbol-theme-2').addClass('symbol-theme-1');
   $('#wrap').removeClass('symbol-theme-2-bg').addClass('symbol-theme-1-bg');
   $('h1.category').removeClass('symbol-theme-2-h1').addClass('symbol-theme-1-h1');
   $('#wrap-symbols').addClass('wrap-symbols-theme');
+  $('#wrap-symbols').addClass('wrap-symbols-theme-2').removeClass('wrap-symbols-theme-1');
 });
 
 //  change theme of symbols to light
-$('#ico-theme-2').click(function(e) {
-  e.preventDefault();
+$('#ico-theme-2').click(function() {
   $('.symbol').removeClass('symbol-theme-1').addClass('symbol-theme-2');
   $('#wrap').removeClass('symbol-theme-1-bg').addClass('symbol-theme-2-bg');
   $('h1.category').removeClass('symbol-theme-1-h1').addClass('symbol-theme-2-h1');
-  $('#wrap-symbols').addClass('wrap-symbols-theme');
+  $('#wrap-symbols').addClass('wrap-symbols-theme-1').removeClass('wrap-symbols-theme-2');
 });
 
 //  change theme of symbols to default dark
-$('#ico-theme-default').click(function(e) {
-  e.preventDefault();
+$('#ico-theme-default').click(function() {
   $('.symbol').removeClass('symbol-theme-1 symbol-theme-2');
   $('#wrap').removeClass('symbol-theme-1-bg symbol-theme-2-bg');
   $('h1.category').removeClass('symbol-theme-1-h1 symbol-theme-2-h1');
-  $('#wrap-symbols').removeClass('wrap-symbols-theme');
+  $('#wrap-symbols').removeClass('wrap-symbols-theme-1 wrap-symbols-theme-2');
 });
 
 // open showSymbol modal window
 $('.symbol').click(function(e) {
   e.preventDefault();
 
-  // load data of symbol
-  var symbol = symbols[$(this).attr('id')]
+  if ($('#mode-copy-html').hasClass('btn-danger')) {
+    // copy symbol's html code to the clipboard
+    var clipboard = new Clipboard('.symbol', {
+      text: function(trigger) {
+        return $(trigger).html();
+      }
+    });
+    clipboard.on('success', function(e) {
+      $infoMsg.html('<i class="fa fa-exclamation-triangle"></i> HTML source copy to the clipboard succesfully.');
+      $infoMsg.fadeIn().delay(1000).fadeOut();
+      clipboard.destroy();
+    });
+  } else if ($('#mode-copy-css').hasClass('btn-danger')) {
+    // copy symbol's css code to the clipboard
+    var clipboard = new Clipboard('.symbol', {
+      text: function(trigger) {
+        return $(trigger).attr('unicode');
+      }
+    });
+    clipboard.on('success', function(e) {
+      $infoMsg.html('<i class="fa fa-exclamation-triangle"></i> CSS source copy to the clipboard successfully.');
+      $infoMsg.fadeIn().delay(1000).fadeOut();
+      clipboard.destroy();
+    });
 
-  // refresh modal from data
-  $('#symbol-html').html(symbol.code);
+  } else {
+    // show all information about the selected symbols
 
-  // top of the window: symbol pack name and link and symbol name and link
-  $('#symbol-pack-link').attr('href', symbol.packLink);
-  $('#symbol-pack-name').html(symbol.pack);
-  $('#symbol-link').attr('href', symbol.link);
-  $('#symbol-name').html(symbol.name);
+    // load data of symbol
+    var symbol = symbols[$(this).attr('id')]
 
-  // source and unicode text to use symbol
-  $('#symbol-code').text(symbol.code);
-  $('#symbol-unicode').text(symbol.unicode);
+    // refresh modal from data
+    $('#symbol-html').html(symbol.code);
 
-  // keywords to the symbol
-  $('#symbol-keyword').text(symbol.keyword);
+    // top of the window: symbol pack name and link and symbol name and link
+    $('#symbol-pack-link').attr('href', symbol.packLink);
+    $('#symbol-pack-name').html(symbol.pack);
+    $('#symbol-link').attr('href', symbol.link);
+    $('#symbol-name').html(symbol.name);
 
-  // warning message show only brand icons
-  $('#alert-font-awesome').hide();
-  $('#alert-material').hide();
+    // source and unicode text to use symbol
+    $('#symbol-code').text(symbol.code);
+    $('#symbol-unicode').text(symbol.unicode);
 
-  // brand icon show extra legal infos
-  if (symbol.pack === 'font-awesome' && inArray(symbol.id, symbols_fontawesome_brand_icons)) {
-      $('#alert-font-awesome').show();
-  } else if(symbol.pack === 'material' && inArray(symbol.id, symbols_material_brand_icons)) {
-      $('#alert-material').show();
-  }
+    // keywords to the symbol
+    $('#symbol-keyword').text(symbol.keyword);
 
-  // open modal window
-  $('#infoSymbol').modal();
+    // warning message show only brand icons
+    $('#alert-font-awesome').hide();
+    $('#alert-material').hide();
+
+    // brand icon show extra legal infos
+    if (symbol.pack === 'font-awesome' && inArray(symbol.id, symbols_fontawesome_brand_icons)) {
+        $('#alert-font-awesome').show();
+    } else if(symbol.pack === 'material' && inArray(symbol.id, symbols_material_brand_icons)) {
+        $('#alert-material').show();
+    }
+
+    // Info Dialog: copy symbol's html code to the clipboard
+    var clipboardHtml = new Clipboard('#copy-html-clipboard', {
+      text: getSelectedSymbolCode
+    });
+
+    // open modal window
+    $('#infoSymbol').modal();
+  } // end of show info modal mode
+});
+
+function getSelectedSymbolCode(trigger) {
+  return $('#symbol-code').html();
+}
+
+function getSelectedSymbolUnicode(trigger) {
+  return $('#symbol-unicode').html();
+}
+
+// Info Dialog: copy symbol's html code to the clipboard
+var clipboardHtml = new Clipboard('#copy-html-clipboard', {
+  text: getSelectedSymbolCode
+});
+
+// info dialog: copy symbol's css code to the clipboard
+var clipboardCss = new Clipboard('#copy-css-clipboard', {
+  text: getSelectedSymbolUnicode
 });
 
 // using bootstrap tooltip
@@ -162,4 +231,4 @@ $('.symbol').tooltip({
 });
 
 // use clipboard jquery plugin to copy source an unicode info of symbol
-new Clipboard('.btn');
+// new Clipboard('.btn');

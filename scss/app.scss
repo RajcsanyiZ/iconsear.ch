@@ -18,9 +18,14 @@ body {
 
   small {
     font-family: 'Raleway', sans-serif;
-    color: red;
+    background-color: darkred;
+    color: #fee;
     font-size: 0.5em;
     font-style: italic;
+    padding: 3px 10px;
+    border-radius: 3px;
+    font-weight: bold;
+
   }
 }
 
@@ -180,15 +185,6 @@ h1.category {
     font-size: .5em;
     color: red;
   }
-}
-
-h1.symbol-theme-1-h1 {
-  color: black;
-
-  small {
-    color: gray;
-  }
-
 }
 
 h1.symbol-theme-2-h1 {
@@ -402,20 +398,10 @@ h1.symbol-theme-2-h1 {
   }
 }
 
-.symbol-theme-1 {
-  i, span {
-    color: #444;
-  }
-}
-
 .symbol-theme-2 {
   i, span {
     color: black;
   }
-}
-
-.symbol-theme-1-bg, .symbol-theme-1 {
-  background: #eee;
 }
 
 .symbol-theme-2-bg, .symbol-theme-2 {
@@ -442,9 +428,10 @@ h1.symbol-theme-2-h1 {
   }
 }
 
-.wrap-symbols-theme {
-  background: #eee;
+.wrap-symbols-theme-2 {
+  background: #ddd;
 }
+
 
 #wrap-symbols {
   padding-bottom: 20px;
@@ -495,3 +482,17 @@ h1.symbol-theme-2-h1 {
   }
 }
 
+#info-message {
+  position: fixed;
+  margin: 50px auto;
+  max-width: 500px;
+  min-width: 300px;
+  border: 5px solid white;
+  box-shadow: 0 0 20px black;
+}
+
+.btn-symbol-mode,
+.btn-symbol-size,
+.btn-symbol-theme {
+  cursor: pointer;
+}
