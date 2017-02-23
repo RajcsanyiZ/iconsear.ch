@@ -3,7 +3,7 @@ https://rajcsanyiz.github.io/getmysymbol
 
 Symbol finder for Font Awesome and Material Design Icons.
 
-![preview](https://rajcsanyiz.github.io/getmysymbol/img/thumb01.png "thumbnail of the app")
+![preview](https://iconsear.ch/thumb02.png "thumbnail of the app")
 
 ## Description
 These tool helps you to find the proper icon/symbol to your app.
