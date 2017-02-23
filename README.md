@@ -1,5 +1,5 @@
 # Get My Symbol
-https://rajcsanyiz.github.io/getmysymbol
+http://iconsear.ch
 
 Symbol finder for Font Awesome and Material Design Icons.
 
