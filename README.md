@@ -1,12 +1,12 @@
 # Get My Symbol
 http://iconsear.ch
 
-Symbol finder for Font Awesome and Material Design Icons.
+This is an offline Symbol finder. You've already know to search Font Awesome or Material Design Icon very easy.
 
 ![preview](http://iconsear.ch/img/thumb02.png "thumbnail of the app")
 
 ## Description
-These tool helps you to find the proper icon/symbol to your app.
+These tool helps you to find the proper icon or symbo and it works similar as the font awesome webpage.
 
 This project is beta version now.
 
